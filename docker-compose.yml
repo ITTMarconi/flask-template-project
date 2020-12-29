@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  db:
+    image: mariadb
+    # command: --default-authentication-plugin=mysql_native_password # this is not working
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'notes'
+      MYSQL_ROOT_PASSWORD: 'cisco'
+      MYSQL_USER: 'flask' 
+      MYSQL_PASSWORD: 'cisco'
+    ports:
+      - '3307:3306'
+    volumes: 
+      - flask-db:/var/lib/mysql
+  cache:
+    image: redis
+    environment:
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+    ports:
+      - '6379:6379'
+volumes:
+  flask-db:
