@@ -51,7 +51,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `notes` (`id`,`created_time`,`updated_time`,`content`,`user`) VALUES (1,'2020-12-29 22:26:23','2020-12-29 22:26:23','La miglior scuola del Trentino',1),(2,'2020-12-29 22:26:48','2020-12-29 22:26:48','Forse esagero un po\'',1),(3,'2020-12-29 22:27:10','2020-12-29 22:27:10','Ricordarsi di portare il certificato!!!',2),(4,'2020-12-29 22:27:27','2020-12-29 22:27:27','Capito?!?!',2);
+INSERT INTO `notes` (`id`,`created_time`,`updated_time`,`content`,`author`) VALUES (1,'2020-12-29 22:26:23','2020-12-29 22:26:23','La miglior scuola del Trentino',1),(2,'2020-12-29 22:26:48','2020-12-29 22:26:48','Forse esagero un po\'',1),(3,'2020-12-29 22:27:10','2020-12-29 22:27:10','Ricordarsi di portare il certificato!!!',2),(4,'2020-12-29 22:27:27','2020-12-29 22:27:27','Capito?!?!',2);
 
 INSERT INTO `users` (`id`,`created_time`,`updated_time`,`first_name`,`last_name`,`email`) VALUES (1,'2020-12-29 22:24:28','2020-12-29 22:24:28','Guglielmo','Marconi','marconi@marconirovereto.it'),(2,'2020-12-29 22:25:14','2020-12-29 22:25:14','Segreteria','Didattica','didattica@marconirovereto.it');
 
