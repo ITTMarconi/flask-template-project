@@ -14,7 +14,7 @@ CREATE TABLE `notes` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'primary key',
   `created_time` datetime DEFAULT current_timestamp() COMMENT 'created tiem',
   `updated_time` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'updated tiem',
-  `content` varchar(255) DEFAULT NULL,
+  `content` longtext DEFAULT NULL,
   `author` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `author` (`author`),
@@ -48,6 +48,7 @@ CREATE TABLE `users` (
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
+  `password` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
