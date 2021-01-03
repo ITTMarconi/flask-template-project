@@ -8,8 +8,8 @@ import time
 import redis
 from flask import Flask
 from flaskext.mysql import MySQL
-#from config import DockerDevConfig as Config
-from config import DevConfig as Config
+from config import DockerDevConfig as Config
+#from config import DevConfig as Config
 #from config import ProdConfig as Config
 
 app = Flask(__name__)

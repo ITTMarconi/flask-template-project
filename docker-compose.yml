@@ -7,11 +7,11 @@ services:
     environment:
       MYSQL_DATABASE: 'notes'
       MYSQL_ROOT_PASSWORD: 'cisco'
-      MYSQL_USER: 'flask' 
+      MYSQL_USER: 'flask'
       MYSQL_PASSWORD: 'cisco'
     ports:
       - '3307:3306'
-    volumes: 
+    volumes:
       - flask-db:/var/lib/mysql
   cache:
     image: redis
@@ -20,5 +20,11 @@ services:
       REDIS_PORT: 6379
     ports:
       - '6379:6379'
+  app:
+    build: .
+    ports:
+      - '5000:5000'
+    links:
+      - db
 volumes:
   flask-db:
