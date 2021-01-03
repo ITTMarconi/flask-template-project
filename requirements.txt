@@ -1,3 +1,5 @@
 flask
 redis
 python-dotenv
+flask_table
+flask-mysql
