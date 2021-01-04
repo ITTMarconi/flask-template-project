@@ -30,7 +30,61 @@ def client():
 
 
 def test_connection(client):
-    """Start with a blank database."""
+    """Can establish a connection"""
 
     conn, cursor = client
     assert conn is not None
+
+def test_users_table(client):
+    """Table users exists and has at least one user"""
+
+    conn, cursor = client
+    try:
+        cursor.execute("SELECT * FROM users")
+        rows = cursor.fetchone()
+        assert rows is not None
+    except Exception as e:
+        assert False
+
+def test_notes_table(client):
+    """Table notes exists and has at least one note"""
+
+    conn, cursor = client
+    try:
+        cursor.execute("SELECT * FROM notes")
+        rows = cursor.fetchone()
+        assert rows is not None
+    except Exception as e:
+        assert False
+
+def test_tags_table(client):
+    """Table tags exists"""
+
+    conn, cursor = client
+    try:
+        cursor.execute("SELECT * FROM tags")
+        assert True
+    except Exception as e:
+        assert False
+
+
+def test_tags_table(client):
+    """Table tags exists"""
+
+    conn, cursor = client
+    try:
+        cursor.execute("SELECT * FROM tags")
+        assert True
+    except Exception as e:
+        assert False
+
+
+def test_notes_tags_table(client):
+    """Table notes_tags exists"""
+
+    conn, cursor = client
+    try:
+        cursor.execute("SELECT * FROM notes_tags")
+        assert True
+    except Exception as e:
+        assert False
